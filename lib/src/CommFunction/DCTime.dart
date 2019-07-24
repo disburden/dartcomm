@@ -131,6 +131,11 @@ class DCTime {
 		return dateTimeString;
 	}
 	
+	/// 返回今天的日期字符串(因为比较常用,所以写个方法)
+	static String todayStr(){
+		return formatDateTime(dateTimeString: DateTime.now().toString(),style: TimeStyle.YEAR_hg_MO_hg_DAY);
+	}
+	
 	/// 获取某个日期在一年中是第几天天天天天天天天(默认计算当天)
 	static int dayOfIndexInYear({DateTime date}){
 		date = date??DateTime.now();
