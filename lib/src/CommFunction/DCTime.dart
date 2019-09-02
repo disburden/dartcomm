@@ -14,6 +14,9 @@ enum TimeStyle {
 
 	/// 2018.08
 	YEAR_dot_MO,
+	
+	/// 2018.08.08
+	YEAR_dot_MO_dot_DAY,
 
 	/// 20180809
 	YEAR_MO_DAY,
@@ -68,6 +71,8 @@ class DCTime {
 				return "$year-$moo-$day $hour:$min:$sec";
 			case TimeStyle.YEAR_dot_MO:
 				return "$year.$moo";
+			case TimeStyle.YEAR_dot_MO_dot_DAY:
+				return "$year.$moo.$day";
 			case TimeStyle.YEAR_MO_DAY:
 				return "$year$moo$day";
 			case TimeStyle.HOUR_mh_MI_mh_SE:
