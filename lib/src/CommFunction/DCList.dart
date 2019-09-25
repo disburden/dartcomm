@@ -25,4 +25,11 @@ class DCList {
 			.values
 			.toList();
 	}
+	
+	/// 将数组中两个位置的元素对调
+   static swapElement<T>(List<T> list,int index1,int index2){
+	   T temp = list[index1];
+	   list[index1] = list[index2];
+	   list[index2] = temp;
+   }
 }
