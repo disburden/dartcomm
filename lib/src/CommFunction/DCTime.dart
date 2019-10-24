@@ -184,4 +184,11 @@ class DCTime {
 		
 		return [firstDayOfMonth,lastDayOfMonth];
 	}
+	
+	/// 获取某日所在的年的第一天和最后一天
+	static List<DateTime> yearIntervalOfDay(DateTime aDate){
+		DateTime firstDayOfMonth = DateTime(aDate.year,1,1);
+		DateTime lastDayOfMonth = DateTime(aDate.year,12,31);
+		return [firstDayOfMonth,lastDayOfMonth];
+	}
 }
