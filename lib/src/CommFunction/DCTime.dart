@@ -171,4 +171,17 @@ class DCTime {
 		var WeekLast = DateTime.now().add(Duration(days: (DateTime.saturday - diffDays)));
 		return [weekFirst,WeekLast];
 	}
+	
+	/// 获取某日所在的月份的第一天和最后一天
+	static List<DateTime> monthIntervalOfDay(DateTime aDate){
+		//获取当月的第一天
+		DateTime firstDayOfMonth = DateTime(aDate.year,aDate.month,1);
+		
+		//取得了下一个月的第一个
+		DateTime dataNextMonthData =  DateTime(aDate.year, aDate.month + 1, 1);
+		//下个月第一天再回退一天就是这个月的最后一天
+		DateTime lastDayOfMonth = dataNextMonthData.add(Duration(days: -1));
+		
+		return [firstDayOfMonth,lastDayOfMonth];
+	}
 }
