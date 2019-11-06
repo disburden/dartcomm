@@ -1,5 +1,6 @@
 
 //import 'package:meta/meta.dart';
+import 'DCDataType.dart';
 
 /// 时间类型
 enum TimeStyle {
@@ -60,7 +61,7 @@ class DCTime {
 		String year = i_year.toString();
 		String moo = (i_moo < 10) ? "0$i_moo" : i_moo.toString();
 		String day = (i_day < 10) ? "0$i_day" : i_day.toString();
-		String sec = i_sec.toString();
+		String sec = DCDataType.int2stringWithLength(i_sec, 2);
 
 		switch (style) {
 			case TimeStyle.HOUR_mh_MI_kg_MO_xg_DAY:

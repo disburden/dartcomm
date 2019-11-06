@@ -95,4 +95,15 @@ class DCDataType {
 		
 		return result;
 	}
+	
+	// 将int转成字符串,并根据指定长度在前面补0
+	static String int2stringWithLength(int num,int customLength){
+		var intStr = num.toString();
+		int diff = customLength-intStr.length;
+		String prestr = "";
+		for (int i=0;i<diff;i++){
+			prestr += "0";
+		}
+		return prestr+intStr;
+	}
 }
