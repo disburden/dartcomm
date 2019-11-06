@@ -56,11 +56,11 @@ class DCTime {
 		int i_day = dt.day;
 		int i_sec = dt.second;
 
-		String hour = (i_hour < 10) ? "0$i_hour" : i_hour.toString();
-		String min = (i_min < 10) ? "0$i_min" : i_min.toString();
+		String hour = DCDataType.int2stringWithLength(i_hour, 2);
+		String min = DCDataType.int2stringWithLength(i_min, 2);
 		String year = i_year.toString();
-		String moo = (i_moo < 10) ? "0$i_moo" : i_moo.toString();
-		String day = (i_day < 10) ? "0$i_day" : i_day.toString();
+		String moo = DCDataType.int2stringWithLength(i_moo, 2);
+		String day = DCDataType.int2stringWithLength(i_day, 2);
 		String sec = DCDataType.int2stringWithLength(i_sec, 2);
 
 		switch (style) {
