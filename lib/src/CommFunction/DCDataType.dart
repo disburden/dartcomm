@@ -72,7 +72,20 @@ class DCDataType {
 			case JsonType.String:
 				return field?.toString();
 			case JsonType.bool:
-				return field != null && !(field is bool) ? int.parse(double.parse(field.toString()).toStringAsFixed(0)) != 0 : field;
+				{
+					if (field is bool){
+						return field;
+					}
+					
+					if (field is int){
+						return int.parse(double.parse(field.toString()).toStringAsFixed(0)) != 0;
+					}
+					
+					if (field is String){
+						return field=="True";
+					}
+				}
+//				return field != null && !(field is bool) ? int.parse(double.parse(field.toString()).toStringAsFixed(0)) != 0 : field;
 				break;
 		}
 	}
