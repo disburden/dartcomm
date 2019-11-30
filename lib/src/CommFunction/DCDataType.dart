@@ -5,6 +5,12 @@ enum JsonType {
 	bool,
 }
 
+enum KCheckParseType{
+	num,
+	int,
+	double,
+}
+
 class DCDataType {
 	
 	/// 将double保留指定的小数位(默认两位),支持double和字符串
@@ -54,10 +60,13 @@ class DCDataType {
 			switch (type) {
 				case JsonType.int:
 					return 0;
+					break;
 				case JsonType.double:
 					return 0.0;
+					break;
 				case JsonType.String:
 					return "";
+					break;
 				case JsonType.bool:
 					return false;
 					break;
@@ -118,5 +127,22 @@ class DCDataType {
 			prestr += "0";
 		}
 		return prestr+intStr;
+	}
+	
+	// 判断字符串是否为数字,整型,小数
+	static bool checkStringCanParseType(String str,{KCheckParseType willParseType=KCheckParseType.num}){
+		switch (willParseType) {
+			case KCheckParseType.num:
+				return num.tryParse(str) != null;
+				break;
+			
+			case KCheckParseType.int:
+				return int.tryParse(str) != null;
+				break;
+			
+			case KCheckParseType.double:
+				return double.tryParse(str) != null;
+				break;
+		}
 	}
 }
