@@ -91,7 +91,7 @@ class DCDataType {
 					}
 					
 					if (field is String){
-						return field=="True";
+						return field.trim()=="True" || field.trim()=="true";
 					}
 				}
 //				return field != null && !(field is bool) ? int.parse(double.parse(field.toString()).toStringAsFixed(0)) != 0 : field;
