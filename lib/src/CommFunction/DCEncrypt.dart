@@ -2,13 +2,16 @@
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
 import 'dart:typed_data';
+import 'package:uuid/uuid.dart';
 
 //import 'package:encrypt/encrypt.dart';
 //import 'package:flutter_des/flutter_des.dart';
 
 class DCEncrypt{
 
-	
+	static String obtainAHash(){
+		return Uuid().v1();
+	}
 	
 	//region 对称加密
 	/// Aes加解密
